@@ -1,0 +1,44 @@
+Dokumentation des Arbeitszeit-Tracking- und E-Mail-Benachrichtigungsprojekts
+
+Einleitung
+Dieses Projekt hilft Ihnen, Ihre Arbeitszeiten während der Woche automatisch zu erfassen und eine Übersicht Ihrer Arbeitsstunden via E-Mail zu erhalten. Ideal für Freiberufler, Heimarbeiter oder jeden, der einen klaren Überblick über seine Arbeitszeit wünscht.
+
+Was macht dieses Projekt?
+
+Mit diesem Projekt können Sie:
+
+Arbeitsbeginn und -ende erfassen: Markieren Sie den Start und das Ende Ihrer Arbeit mit einem einfachen Klick.
+Automatische Arbeitszeiterfassung: Ihre Arbeitszeiten werden sicher in einer Datei auf Ihrem Computer gespeichert.
+Wöchentliche Zusammenfassung per E-Mail: Erhalten Sie jeden Freitag automatisch eine E-Mail mit einer Zusammenfassung Ihrer Arbeitsstunden.
+
+Wie funktioniert es?
+Das Projekt besteht aus zwei Hauptteilen: dem Arbeitszeit-Tracker und dem E-Mail-Versandskript. Zusätzlich gibt es drei Batch-Dateien, die das Starten und Stoppen des Trackers sowie den Versand der E-Mail automatisieren.
+
+Arbeitszeit-Tracker (worktime_tracker.py)
+Starten/Stoppen der Arbeitszeit: Wenn Sie beginnen zu arbeiten, starten Sie den Tracker mit der start_time_tracker.bat Datei. Beim Beenden Ihrer Arbeit führen Sie die shutdown_time_tracker.bat Datei aus.
+Speichern der Arbeitszeiten: Jedes Mal, wenn Sie den Tracker starten oder stoppen, speichert das Skript den Zeitpunkt in einer Log-Datei auf Ihrem Computer.
+E-Mail-Versandskript (send-my-a-email.py)
+Wöchentliche E-Mail: Das Skript liest die gesammelten Arbeitszeiten aus der Log-Datei und erstellt eine E-Mail mit einer Zusammenfassung Ihrer Arbeitsstunden.
+Automatischer Versand: Durch Ausführen der sendEmailEveryFriday.bat Datei wird die E-Mail automatisch jeden Freitag um 18 Uhr versandt.
+
+Batch-Dateien
+start_time_tracker.bat: Startet den Arbeitszeit-Tracker.
+shutdown_time_tracker.bat: Stoppt den Arbeitszeit-Tracker und speichert die Zeit.
+sendEmailEveryFriday.bat: Sendet die wöchentliche Zusammenfassung per E-Mail.
+
+Schritt-für-Schritt-Anleitung zur Automatisierung
+Task Scheduler einrichten: Erstellen Sie zwei Aufgaben im Task Scheduler. Eine für den Arbeitsbeginn, die start_time_tracker.bat ausführt, und eine für das Arbeitsende, die shutdown_time_tracker.bat ausführt.
+Gruppenrichtlinien für E-Mails nutzen: Konfigurieren Sie eine Gruppenrichtlinie, um die sendEmailEveryFriday.bat Datei jeden Freitag um eine bestimmte Uhrzeit auszuführen, um die E-Mail mit Ihrer Arbeitszeitzusammenfassung zu versenden.
+
+Häufig gestellte Fragen (FAQs)
+Was passiert, wenn ich vergesse, den Tracker zu starten oder zu stoppen?
+Sie können die Log-Datei manuell bearbeiten, um fehlende Zeiten nachzutragen.
+
+Kann ich die E-Mail an eine andere Adresse senden?
+Ja, Sie können die Empfängeradresse im send-my-a-email.py Skript anpassen.
+
+Was mache ich, wenn ich keine E-Mails erhalte?
+Überprüfen Sie die E-Mail-Details im Skript und stellen Sie sicher, dass Ihr SMTP-Server korrekt konfiguriert ist.
+
+Abschluss
+Mit diesem Projekt haben Sie eine einfache und effiziente Methode, um Ihre Arbeitszeiten zu verfolgen und eine wöchentliche Zusammenfassung Ihrer Stunden per E-Mail zu erhalten. Es ist eine praktische Lösung, um den Überblick über Ihre Arbeitszeit zu behalten und sicherzustellen, dass Sie für Ihre harte Arbeit angemessen anerkannt werden.
