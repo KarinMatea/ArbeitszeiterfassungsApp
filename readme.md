@@ -1,4 +1,5 @@
 Über dieses Projekt
+
 Dieses Projekt ermöglicht die automatische Erfassung von Arbeitszeiten und das wöchentliche Versenden einer E-Mail mit einer Arbeitsstundenzusammenfassung. 
 Es nutzt den Windows Task Scheduler und Gruppenrichtlinien, um die Erfassung und den E-Mail-Versand ohne manuelles Eingreifen zu automatisieren.
 
